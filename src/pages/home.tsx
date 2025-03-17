@@ -22,14 +22,14 @@ const Home = () => {
       name: "Pumpert(PUMPE)",
       author: "$yeyex",
       daysAgo: "5 days ago",
-      percent: "+200%",
+      percent: "+550%",
       image: ecoDrive,
     },
     {
       name: "EcoDrive(ED)",
       author: "$yeyex",
       daysAgo: "5 days ago",
-      percent: "+200%",
+      percent: "+120%",
       image: techNova,
     },
     {
@@ -51,11 +51,11 @@ const Home = () => {
     <Container className="p-4 lg:p-5">
       <Header />
       <Banner />
-      <section className="py-7 w-full">
+      <section className="flex flex-col py-7 w-full">
         <h1 className="text-xl">Top 10</h1>
-        <ScrollArea className="py-6 w-full overflow-hidden whitespace-nowrap">
+        <ScrollArea className="flex-1 w-full min-w-0 py-6 overflow-hidden whitespace-nowrap">
           <div className="flex gap-4 w-max">
-            {Array.from({ length: 4 }).map((_, i) => (
+            {Array.from({ length: 5 }).map((_, i) => (
               <TopCards key={i} />
             ))}
           </div>
@@ -65,19 +65,20 @@ const Home = () => {
 
       <section className="pt-2 pb-7">
         <Tabs defaultValue="account" className="]">
-          <div className="flex flex-col gap-2 md:flex-row pb-5">
+          <div className="flex flex-col md:items-center gap-2 md:flex-row pb-5">
             <span className="opacity-50 font-semibold">Sort by:</span>
-            <TabsList>
+            <TabsList className="flex-wrap *:w-fit">
               <TabsTrigger value="account">Market Cap</TabsTrigger>
               <TabsTrigger value="tokens">Tokens</TabsTrigger>
               <TabsTrigger value="holdings">Holdings</TabsTrigger>
+              <TabsTrigger value="tax">Tax</TabsTrigger>
             </TabsList>
           </div>
           <TabsContent value="account">
             <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-1.5 justify-center lg:gap-4">
               {tokens.map((token) => (
                 <Link to={"/coin/tw0i4tno405hgg04s4"}>
-                  <div className="bg-brand-grey p-2 w-full rounded-2xl">
+                  <div className="bg-brand-grey font-jost p-2 w-full rounded-2xl">
                     <div className="w-full aspect-[4/3] rounded-xl bg-white">
                       <img src={token.image} alt="" className="size-full" />
                     </div>

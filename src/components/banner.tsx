@@ -10,9 +10,9 @@ const Banner = ({}: Props) => {
     <div className="p-[1px] gradient rounded-2xl">
       <section className="bg-gradient-to-l from-[#0C4732] to-black  p-4 md:p-3.5 md:px-10 rounded-2xl flex flex-col-reverse gap-5 md:flex-row items-start md:items-center text-white">
         <div className="flex gap-2 lg:gap-5">
-          <button className="px-4 lg:px-7 py-3 font-semibold gradient text-black rounded-full">
+          {/* <button className="px-4 lg:px-7 py-3 font-semibold gradient text-black rounded-full">
             Mint Token
-          </button>
+          </button> */}
           <div className="gradient p-[2px] rounded-full overflow-clip bg-clip-border">
             <button
               onClick={() => setModal(!modal)}
