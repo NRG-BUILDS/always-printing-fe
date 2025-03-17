@@ -4,7 +4,35 @@ import TradingInterface from "@/components/tokenPageComps/trade-interface";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import TradingView from "@/components/tokenPageComps/trading-view";
+
+import ecoDrive from "@/assets/images/item/ecoDrive.png";
+import pumpert from "@/assets/images/item/pumpert.png";
+import techNova from "@/assets/images/item/techNova.png";
+
 const CoinPage = () => {
+  const tokens = [
+    {
+      name: "Pumpert(PUMPE)",
+      author: "$yeyex",
+      daysAgo: "5 days ago",
+      percent: "+200%",
+      image: pumpert,
+    },
+    {
+      name: "EcoDrive(ED)",
+      author: "$yeyex",
+      daysAgo: "5 days ago",
+      percent: "+120%",
+      image: ecoDrive,
+    },
+    {
+      name: "FinSecure(FS)",
+      author: "$yeyex",
+      daysAgo: "5 days ago",
+      percent: "+200%",
+      image: techNova,
+    },
+  ];
   return (
     <Container className="grid lg:grid-cols-12 items-start gap-4 h-[70svh]">
       <div className="lg:col-span-8 grid gap-4">
@@ -47,8 +75,8 @@ const CoinPage = () => {
           </h2>
           <ScrollArea className="py-6 flex-1 min-w-0 overflow-hidden whitespace-nowrap">
             <div className="flex gap-4 w-max">
-              {Array.from({ length: 4 }).map((_, i) => (
-                <SimilarCoins key={i} />
+              {tokens.map((token, i) => (
+                <SimilarCoins token={token} key={i} />
               ))}
             </div>
             <ScrollBar
@@ -68,21 +96,21 @@ const CoinPage = () => {
 
 export default CoinPage;
 
-const SimilarCoins = () => {
+const SimilarCoins = ({ token }: { token: any }) => {
   return (
     <Container className="bg-brand-grey">
       <div className="flex gap-5 items-stretch">
         <div className="size-20 rounded-2xl bg-accent overflow-clip">
-          <img className="size-full" src={""} />
+          <img className="size-full object-cover" src={token.image} />
         </div>
         <div className="flex flex-col justify-between text-white *:w-fit">
           <div className="">
-            <p className="font-poppins font-medium text-[14px]">Hello (HEL)</p>
+            <p className="font-poppins font-medium text-[14px]">{token.name}</p>
             <p className="text-green-700 text-[12px]">Market Cap: $50k</p>
           </div>
           <div className="text-[10px]">
-            <p className="font-poppins font-medium">Hello (HEL)</p>
-            <p className="text-gray-700 ">Created 2 days ago</p>
+            <p className="font-poppins font-medium">Replies: 30</p>
+            <p className="text-gray-700 ">Created {token.daysAgo}</p>
           </div>
         </div>
       </div>
