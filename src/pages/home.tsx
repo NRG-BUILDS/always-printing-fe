@@ -3,13 +3,18 @@ import Container from "@/components/container";
 import TopCards from "@/components/homeComps/top-cards";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Link } from "react-router";
+import Header from "@/components/header";
+
 import ecoDrive from "@/assets/images/item/ecoDrive.png";
 import pumpert from "@/assets/images/item/pumpert.png";
 import techNova from "@/assets/images/item/techNova.png";
 import healthPlus from "@/assets/images/item/healthPlus.png";
 import finSecure from "@/assets/images/item/finSecure.png";
-import { Link } from "react-router";
-import Header from "@/components/header";
+import top_1 from "@/assets/images/item/top_1.png";
+import top_2 from "@/assets/images/item/top_2.png";
+import top_3 from "@/assets/images/item/top_3.png";
+import top_4 from "@/assets/images/item/top_4.png";
 
 const Home = () => {
   const tokens = [
@@ -77,6 +82,50 @@ const Home = () => {
       image: finSecure,
     },
   ];
+  const top_tokens = [
+    {
+      id: 1,
+      name: "Ghost",
+      symbol: "GHST",
+      image: top_1,
+      percentChange: "+292%",
+    },
+    {
+      id: 2,
+      name: "Hello",
+      symbol: "HEL",
+      image: top_2,
+      percentChange: "+940.5%",
+    },
+    {
+      id: 3,
+      name: "Pastime",
+      symbol: "PAST",
+      image: top_3,
+      percentChange: "+800%",
+    },
+    {
+      id: 4,
+      name: "Son Goku",
+      symbol: "GOKU",
+      image: top_4,
+      percentChange: "+350%",
+    },
+    {
+      id: 5,
+      name: "Stellar",
+      symbol: "STRL",
+      image: top_2,
+      percentChange: "+925%",
+    },
+    {
+      id: 6,
+      name: "Nebula",
+      symbol: "NEB",
+      image: top_1,
+      percentChange: "+420%",
+    },
+  ];
   return (
     <Container className="p-4 lg:p-5">
       <Header />
@@ -85,8 +134,8 @@ const Home = () => {
         <h1 className="text-xl">Top 10</h1>
         <ScrollArea className="flex-1 w-full min-w-0 py-6 overflow-hidden whitespace-nowrap">
           <div className="flex gap-4 w-max">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <TopCards key={i} />
+            {top_tokens.map((token, i) => (
+              <TopCards key={i} token={token} />
             ))}
           </div>
           <ScrollBar orientation="horizontal" />
