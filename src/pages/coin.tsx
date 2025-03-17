@@ -3,7 +3,7 @@ import Container from "@/components/container";
 import TradingInterface from "@/components/tokenPageComps/trade-interface";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
+import chart from "@/assets/images/item/chart.png";
 const CoinPage = () => {
   return (
     <Container className="grid lg:grid-cols-12 items-start gap-4 h-[70svh]">
@@ -12,7 +12,9 @@ const CoinPage = () => {
           <Banner />
         </div>
         {/* TRADE CHART */}
-        <div className="bg-white rounded-3xl min-h-72 lg:aspect-[838/462]"></div>
+        <div className="bg-[#14251F] rounded-3xl min-h-72 lg:aspect-[838/462]">
+          <img src={chart} alt="" className="size-full rotate-180" />
+        </div>
 
         <Tabs defaultValue="threads" className="]">
           <TabsList>
