@@ -6,6 +6,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ecoDrive from "@/assets/images/item/ecoDrive.png";
 import pumpert from "@/assets/images/item/pumpert.png";
 import techNova from "@/assets/images/item/techNova.png";
+import healthPlus from "@/assets/images/item/healthPlus.png";
+import finSecure from "@/assets/images/item/finSecure.png";
 import { Link } from "react-router";
 import Header from "@/components/header";
 
@@ -17,6 +19,20 @@ const Home = () => {
       daysAgo: "5 days ago",
       percent: "+200%",
       image: pumpert,
+    },
+    {
+      name: "EcoDrive(ED)",
+      author: "$yeyex",
+      daysAgo: "5 days ago",
+      percent: "+120%",
+      image: ecoDrive,
+    },
+    {
+      name: "FinSecure(FS)",
+      author: "$yeyex",
+      daysAgo: "5 days ago",
+      percent: "+200%",
+      image: techNova,
     },
     {
       name: "Pumpert(PUMPE)",
@@ -33,18 +49,32 @@ const Home = () => {
       image: techNova,
     },
     {
-      name: "FinSecure(FS)",
+      name: "Pumpert(PUMPE)",
       author: "$yeyex",
       daysAgo: "5 days ago",
       percent: "+200%",
-      image: techNova,
+      image: finSecure,
     },
     {
       name: "HealthPlus(HP)",
       author: "$yeyex",
       daysAgo: "5 days ago",
       percent: "+200%",
-      image: techNova,
+      image: healthPlus,
+    },
+    {
+      name: "Pumpert(PUMPE)",
+      author: "$yeyex",
+      daysAgo: "5 days ago",
+      percent: "+200%",
+      image: pumpert,
+    },
+    {
+      name: "Pumpert(PUMPE)",
+      author: "$yeyex",
+      daysAgo: "5 days ago",
+      percent: "+550%",
+      image: finSecure,
     },
   ];
   return (

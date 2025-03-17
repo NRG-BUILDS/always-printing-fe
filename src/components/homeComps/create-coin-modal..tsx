@@ -16,10 +16,10 @@ export const CreateCoinModal = ({ open, setModal }: Props) => {
   return (
     <div>
       <Dialog open={open} onOpenChange={setModal}>
-        <DialogContent className="gradient p-1 rounded-3xl sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl w-[95vw] modal">
+        <DialogContent className="p-0.5 bg-green-700 outline-0 border-0 rounded-3xl sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl w-[95vw] modal">
           <div className="bg-brand-grey rounded-[20px] overflow-hidden">
             <DialogHeader className="bg-black p-4 text-center">
-              <DialogTitle className="text-transparent bg-clip-text gradient text-xl mx-auto">
+              <DialogTitle className="text-white text-xl mx-auto">
                 Create New Coin
               </DialogTitle>
               <DialogDescription className="text-red-500 italic mx-auto">
