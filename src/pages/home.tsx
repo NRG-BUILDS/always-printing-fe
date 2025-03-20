@@ -170,9 +170,7 @@ const Home = () => {
                         </p>
                       </div>
                       <div>
-                        <p className="text-xl gradient bg-clip-text text-transparent font-semibold">
-                          {token.percent}
-                        </p>
+                        <p className="text-xl font-medium">{token.percent}</p>
                       </div>
                     </div>
                   </div>

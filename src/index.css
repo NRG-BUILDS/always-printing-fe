@@ -144,7 +144,7 @@
   }
   body {
     font-size: 14px;
-    @apply bg-black text-foreground font-rockwell;
+    @apply bg-black text-foreground font-jost;
   }
   .gradient {
     @apply bg-gradient-to-r from-brand-blue to-brand-green;
