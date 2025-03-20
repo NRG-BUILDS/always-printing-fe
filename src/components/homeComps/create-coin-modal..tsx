@@ -17,7 +17,7 @@ export const CreateCoinModal = ({ open, setModal }: Props) => {
     <div>
       <Dialog open={open} onOpenChange={setModal}>
         <DialogContent className="p-0.5 bg-green-700 outline-0 border-0 rounded-3xl sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl w-[95vw] modal">
-          <div className="bg-brand-grey rounded-[20px] overflow-hidden">
+          <div className="bg-brand-grey rounded-[23px] overflow-hidden">
             <DialogHeader className="bg-black p-4 text-center">
               <DialogTitle className="text-white text-xl mx-auto">
                 Create New Coin
@@ -41,6 +41,10 @@ const CreateCoinForm = () => {
     name: "",
     ticker: "",
     description: "",
+    tax: "",
+    devShare: "",
+    marketingShare: "",
+    rewardInterval: "",
     websiteLink: "",
     telegram: "",
     twitter: "",
@@ -113,10 +117,80 @@ const CreateCoinForm = () => {
           />
         </div>
 
+        {/* Tax and Dev Share Row */}
+        <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+          <div className="flex flex-col w-full md:w-1/2">
+            <label className="text-white mb-2 flex items-center">
+              Tax (%): <span className="text-red-500 ml-1">*</span>
+            </label>
+            <input
+              type="number"
+              name="tax"
+              placeholder="Percentage of tax to receive"
+              max={100}
+              step={0.01}
+              value={formData.tax}
+              onChange={handleChange}
+              className="p-3 rounded bg-black bg-opacity-40 text-white  focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
+          <div className="flex flex-col w-full md:w-1/2">
+            <label className="text-white mb-2 flex items-center">
+              Dev Share (%): <span className="text-red-500 ml-1">*</span>
+            </label>
+            <input
+              type="number"
+              name="devShare"
+              max={100}
+              step={0.01}
+              placeholder="Dev percentage from total tax"
+              value={formData.devShare}
+              onChange={handleChange}
+              className="p-3 rounded bg-black bg-opacity-40 text-white  focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
+        </div>
+
+        {/* Tax and Dev Share Row */}
+        <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+          <div className="flex flex-col w-full md:w-1/2">
+            <label className="text-white mb-2 flex items-center">
+              Marketing Share (%): <span className="text-red-500 ml-1">*</span>
+            </label>
+            <input
+              type="number"
+              name="marketingShare"
+              placeholder="Marketing percentage from total tax"
+              max={100}
+              step={0.01}
+              value={formData.marketingShare}
+              onChange={handleChange}
+              className="p-3 rounded bg-black bg-opacity-40 text-white  focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
+          <div className="flex flex-col w-full md:w-1/2">
+            <label className="text-white mb-2 flex items-center">
+              Rewards Intervals: <span className="text-red-500 ml-1">*</span>
+            </label>
+            <input
+              type="text"
+              name="rewardInterval"
+              placeholder="Time between distribution - minimum 5 minutes"
+              value={formData.rewardInterval}
+              onChange={handleChange}
+              className="p-3 rounded bg-black bg-opacity-40 text-white  focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
+        </div>
+
         {/* Image Upload Section */}
         <div className="flex flex-col w-full">
           <label className="text-white mb-2 flex items-center">
-            Image or Video: <span className="text-gray-400 ml-1"></span>
+            Image: <span className="text-gray-400 ml-1"></span>
           </label>
           <div className="border-2 border-dashed border-gray-600 rounded p-8 flex flex-col items-center justify-center text-center bg-black bg-opacity-20">
             <div className="mb-2 text-gray-400">
